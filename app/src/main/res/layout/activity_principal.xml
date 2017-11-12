@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="juroapp.com.br.juroapp.ActivityPrincipal">
+
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:text="@string/escolharCategoria"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+ 
+    <ScrollView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical"
+            >
+
+            <Button
+                android:id="@+id/btnBebidas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/bebidas" />
+
+            <Button
+                android:id="@+id/organicos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/alimentosOrganicos" />
+
+            <Button
+                android:id="@+id/naoOrganicos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/alimentosNaoOrganicos" />
+
+            <Button
+                android:id="@+id/eletronicos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/eletronicos" />
+
+            <Button
+                android:id="@+id/eletroDomesticos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/eletroDomesticos" />
+
+            <Button
+                android:id="@+id/higiene"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/higienePessoal" />
+
+            <Button
+                android:id="@+id/vestuario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/vestuário" />
+
+            <Button
+                android:id="@+id/carnes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/carnes" />
+
+            <Button
+                android:id="@+id/padaria"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="padara" />
+
+            <Button
+                android:id="@+id/graos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/graos" />
+
+            <Button
+                android:id="@+id/temperos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/tempero" />
+
+            <Button
+                android:id="@+id/brinquedos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/brinquedos" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
