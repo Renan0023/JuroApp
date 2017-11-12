@@ -23,7 +23,8 @@
             android:id="@+id/senha"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/senha" />
+            android:hint="@string/senha"
+            android:inputType="textPassword" />
 
         <Button
             android:id="@+id/btnEntrar"
