@@ -4,4 +4,62 @@
     <string name="login">Longin</string>
     <string name="senha">Senha</string>
     <string name="entrar">Entrar</string>
+
+
+    <!--ALert Novo Usuario-->
+    <string name="infoAlert">Informe seus  dados para cadastro :</string>
+    <string name="nome">Nome</string>
+    <string name="sobreNome">Sobre nome</string>
+    <string name="email">Email</string>
+    <string name="Profissao">Profissão</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="confirmaSenha">Confirme a senha</string>
+    <string name="senhaInvalida">Senha Inválida</string>
+    <string name="todosOsCamposPreenchidos">Todos os campos devem ser preenchidos</string>
+    <string name="title_activity_principal">ActivityPrincipal</string>
+
+    <!--Menu Principal-->
+    <string name="escolharCategoria">Escolha a Categoria que deseja trabalhar</string>
+
+
+    <!--Menu Bedidas-->
+    <!--Bebidas-->
+    <string name="bebidas">Bebidas</string>
+
+    <!--Alimentos Organicos-->
+    <string name="alimentosOrganicos">Alimentos Organicos</string>
+
+    <!--Alimentos não Organicos-->
+    <string name="alimentosNaoOrganicos">Alimentos não Organicos</string>
+
+    <!--Produtos Limpeza-->
+    <string name="produtosLimpeza">Produtos de limpeza</string>
+
+    <!--Eletronicos-->
+    <string name="eletronicos">Eletronicos</string>
+
+    <!--Eletro domesticos-->
+    <string name="eletroDomesticos">Eletro domesticos</string>
+
+    <!--Higiene pessoal-->
+    <string name="higienePessoal">Higiene pessoal</string>
+
+    <!--Vestuário-->
+    <string name="vestuário">Vestuário</string>
+
+    <!--Carnes-->
+    <string name="carnes">Carnes</string>
+
+    <!--Padaria-->
+    <string name="padaria">Padaria</string>
+
+    <!--Grãos-->
+    <string name="graos">Grãos</string>
+
+    <!--Tempero-->
+    <string name="tempero">Tempero</string>
+
+    <!--Brinquedos-->
+    <string name="brinquedos">Brinquedos</string>
+
 </resources>
