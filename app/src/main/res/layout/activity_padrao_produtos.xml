@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="juroapp.com.br.juroapp.Activity.actv.ActivityPadraoProdutos">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Spinner
+            android:id="@+id/spinnerProduto1"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginBottom="2dp" />
+
+        <Spinner
+            android:id="@+id/spinnerProduto2"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginBottom="2dp" />
+
+        <Spinner
+            android:id="@+id/spinnerProduto3"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginBottom="2dp" />
+
+        <Spinner
+            android:id="@+id/spinnerProduto4"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginBottom="2dp" />
+
+        <Spinner
+            android:id="@+id/spinnerProduto5"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginBottom="2dp" />
+
+        <Spinner
+            android:id="@+id/spinnerProduto6"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginBottom="2dp" />
+
+        <Spinner
+            android:id="@+id/spinnerProduto7"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginBottom="2dp" />
+
+        <Spinner
+            android:id="@+id/spinnerProduto8"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginBottom="2dp" />
+
+        <Spinner
+            android:id="@+id/spinnerProduto9"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginBottom="2dp" />
+
+        <Spinner
+
+            android:id="@+id/spinnerProduto10"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginBottom="2dp" />
+
+        <Button
+            android:id="@+id/btnEnviarProdutps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/enviar" />
+
+    </LinearLayout>
+</LinearLayout>

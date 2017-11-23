@@ -3,5 +3,78 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="cor_gold">#daa520</color>
+
+
+    <!-- TEMA CLARO -->
+    <color name="colorPrimary_light">#3F51B5</color>
+    <color name="colorPrimaryDark_light">#3F51B5</color>
+    <color name="color_accent_light">#ffffff</color>
+    <color name="button_default_light">#03A9F4</color>
+    <color name="background_light">#ffffff</color>
+    <color name="text_primary_light">#03A9F4</color>
+    <color name="text_secondary_light">#03A9F4</color>
+    <color name="text_hint_light">#03A9F4</color>
+    <color name="divider_light">#1F000000</color>
+    <color name="background_top_tobbar">#c8c8c8</color>
+
+    <!-- TEMA ESCURO -->
+    <color name="colorPrimary_dark">#303F9F</color>
+    <color name="colorPrimaryDark_dark">#303F9F</color>
+    <color name="color_accent_dark">#03A9F4</color>
+    <color name="button_default_dark">#303F9F</color>
+    <color name="background_dark">#3F51B5</color>
+    <color name="text_primary_dark">#333333</color>
+    <color name="text_secondary_dark">#B3FFFFFF</color>
+    <color name="backgroud_light_dark">#c8c8c8</color>
+    <color name="backgroud_medium_dark">#e4e4e4</color>
+    <color name="back_cinza">#ebecef</color>
+
+    <color name="text_top_about">#777</color>
+
+    <!-- COLOR ADICIONAIS -->
+    <color name="gray_darkdark">#222222</color>
+    <color name="gray_darkmedium">#444444</color>
+    <color name="divider_dark">#1FFFFFFF</color>
+    <color name="gray_darkligth">#666666</color>
+
+    <color name="icon_botton_curent">#383838</color>
+    <color name="icon_botton">#a7a7a7</color>
+
+
+    <color name="gray_medium">#999999</color>
+    <!--ok-->
+    <color name="text_hint_dark">#80FFFFFF</color>
+
+    <color name="gray_ligth">#99FFFFFF</color>
+    <color name="gray_ligth_1">#d2d2d2</color>
+    <color name="orange">#ff821b</color>
+
+    <color name="laranja">#fe991c</color>
+
+
+    <!-- COLOR FLOATING BUTTON -->
+    <color name="red_button">#C20D19</color>
+
+    <!-- COLOR INTRO -->
+    <color name="intro1">#222e7b</color>
+    <color name="intro2">#2d9dd1</color>
+    <color name="color_cell_menu">#23c47e</color>
+    <color name="intro4">#fc4c7e</color>
+    <color name="intro5">#ffa82c</color>
+    <color name="intro6">#942ccf</color>
+    <color name="toolbarColor">#009418</color>
+    <color name="fundo">#80ff95</color>
+    <color name="button1">#33A653</color>
+    <color name="button2">#F03C3C</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="textColorPrimary">#FFFFFF</color>
+    <color name="windowBackground">#FFFFFF</color>
+    <color name="navigationBarColor">#000000</color>
+
+    <color name="ColorButtonLightBlue">#03a9f4</color>
+
+    <color name="color_primary_mycity_light">#f8f8f8</color>
+    <color name="color_primary_dark_mycity_light">#0088c6</color>
+    <color name="color_accent_mycity_light">#03a9f4</color>
 </resources>

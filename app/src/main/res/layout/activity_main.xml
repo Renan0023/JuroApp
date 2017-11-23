@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cor_gold"
-    tools:context="juroapp.com.br.juroapp.MainActivity">
+    android:background="@color/orange"
+    tools:context="juroapp.com.br.juroapp.Activity.actv.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

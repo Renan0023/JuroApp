@@ -10,7 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/BaseAppTheme.Light">
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activity.actv.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,8 +18,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ActivityPrincipal"
-            android:label="@string/title_activity_principal"></activity>
+            android:name=".Activity.actv.ActivityPrincipal"
+            android:label="@string/title_activity_principal" />
+        <activity android:name=".Activity.actv.ActivityBebidas" />
+        <activity android:name=".Activity.actv.ActivityPadraoProdutos"></activity>
     </application>
 
 </manifest>

@@ -21,7 +21,7 @@
     <!--Menu Principal-->
     <string name="escolharCategoria">Escolha a Categoria que deseja trabalhar</string>
 
-
+<string name="enviar">Enviar</string>
     <!--Menu Bedidas-->
     <!--Bebidas-->
     <string name="bebidas">Bebidas</string>
@@ -61,5 +61,17 @@
 
     <!--Brinquedos-->
     <string name="brinquedos">Brinquedos</string>
+    <string name="empty_state_text_title">Sem dados para exibir</string>
+    <string-array name="listaNomes">
+        <item>organicos</item>
+        <item>naoOrganicos</item>
+        <item>eletronicos</item>
+        <item>eletroDomesticos</item>
+        <item>carnes</item>
+        <item>padaria</item>
+        <item>graos</item>
+        <item>temperos</item>
+    </string-array>
+
 
 </resources>

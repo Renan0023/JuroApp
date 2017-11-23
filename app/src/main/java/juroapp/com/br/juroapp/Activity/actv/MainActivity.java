@@ -1,10 +1,9 @@
-package juroapp.com.br.juroapp;
+package juroapp.com.br.juroapp.Activity.actv;
 
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -12,12 +11,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import juroapp.com.br.juroapp.R;
+
 public class MainActivity extends AppCompatActivity {
     private EditText login;
     private EditText senha;
     private Button entrar;
     private TextView novoUsuario;
- 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
