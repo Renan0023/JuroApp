@@ -8,21 +8,22 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
-import juroapp.com.br.juroapp.Activity.VO.ItemListaMenuVO;
+import juroapp.com.br.juroapp.Activity.VO.ItemListaOrganicosVO;
 import juroapp.com.br.juroapp.Activity.actv.ActivityOrganicos;
-import juroapp.com.br.juroapp.Activity.actv.ActivityPrincipal;
+
 import juroapp.com.br.juroapp.Activity.componentes.ViewHolderEmptyState;
 import juroapp.com.br.juroapp.Activity.componentes.ViewHolderItemMenu;
+import juroapp.com.br.juroapp.Activity.componentes.ViewHolderItemProduto;
 import juroapp.com.br.juroapp.R;
 
 /**
  * Created by Renan Dutra on 14/11/2017.
  */
 
-public class CustomAdapterListaMenu extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class CustomAdapterOrganicos extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    private ActivityPrincipal mActivity;
-    private ArrayList<ItemListaMenuVO> mDataset;
+    private ActivityOrganicos mActivity;
+    private ArrayList<ItemListaOrganicosVO> mDataset;
 
     // Animation
     private int lastPosition = -1;
@@ -33,7 +34,7 @@ public class CustomAdapterListaMenu extends RecyclerView.Adapter<RecyclerView.Vi
     private static final int VIEW_TYPE_OBJECT = 1;
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public CustomAdapterListaMenu(ActivityPrincipal activity, ArrayList<ItemListaMenuVO> myDataset) {
+    public CustomAdapterOrganicos(ActivityOrganicos activity, ArrayList<ItemListaOrganicosVO> myDataset) {
 
         this.mActivity = activity;
         this.mDataset = myDataset;
@@ -49,7 +50,7 @@ public class CustomAdapterListaMenu extends RecyclerView.Adapter<RecyclerView.Vi
         /**
          * @param itemNotificacaoVO
          */
-        public void onCellClickContent(ItemListaMenuVO itemNotificacaoVO);
+        public void onCellClickContent(ItemListaOrganicosVO itemNotificacaoVO);
     }
 
 
@@ -82,8 +83,8 @@ public class CustomAdapterListaMenu extends RecyclerView.Adapter<RecyclerView.Vi
                 ViewHolderEmptyState viewHolderEmptyState = new ViewHolderEmptyState(LayoutInflater.from(parent.getContext()).inflate(R.layout.card_empty_state, parent, false));
                 return viewHolderEmptyState;
             case VIEW_TYPE_OBJECT:
-                ViewHolderItemMenu viewHolderItemMenu = new ViewHolderItemMenu(LayoutInflater.from(parent.getContext()).inflate(R.layout.cell_item_menu, parent, false));
-                return viewHolderItemMenu;
+                ViewHolderItemProduto viewHolderItemProduto= new ViewHolderItemProduto(LayoutInflater.from(parent.getContext()).inflate(R.layout.cell_item_produto, parent, false));
+                return viewHolderItemProduto;
         }
 
         return null;
@@ -107,9 +108,9 @@ public class CustomAdapterListaMenu extends RecyclerView.Adapter<RecyclerView.Vi
 
 
                 ViewHolderItemMenu viewHolderItemMenu = (ViewHolderItemMenu) holder;
-                final ItemListaMenuVO item = mDataset.get(position);
+                final ItemListaOrganicosVO item = mDataset.get(position);
 
-                viewHolderItemMenu.mTextViewTitulo.setText(item.getNome());
+                viewHolderItemMenu.mTextViewTitulo.setText(item.getNomeProduto());
                 viewHolderItemMenu.mCardView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -142,11 +143,11 @@ public class CustomAdapterListaMenu extends RecyclerView.Adapter<RecyclerView.Vi
      * @param position
      * @return
      */
-    public ItemListaMenuVO getItemMenuVO(int position) {
+    public ItemListaOrganicosVO getItemMenuVO(int position) {
 
         if (mDataset != null) {
 
-            ItemListaMenuVO itemListaMenuVO = mDataset.get(position);
+            ItemListaOrganicosVO itemListaMenuVO = mDataset.get(position);
 
             return itemListaMenuVO;
         }

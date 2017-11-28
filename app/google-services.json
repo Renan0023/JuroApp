@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "799689984567",
+    "firebase_url": "https://juroapp-dadac.firebaseio.com",
+    "project_id": "juroapp-dadac",
+    "storage_bucket": "juroapp-dadac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:799689984567:android:7ce4e165a6f631d5",
+        "android_client_info": {
+          "package_name": "juroapp.com.br.juroapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "799689984567-kdjfv1j14k92ntsms0efuu8rap3c9v0h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "juroapp.com.br.juroapp",
+            "certificate_hash": "269d5987937e1bf1c0ef447d0a9784571cf4f6ca"
+          }
+        },
+        {
+          "client_id": "799689984567-gfv4klku32d49qs4evfvpb79ggmng89t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAM9RcFZ0lWcuokThvjpAqOEkiOn4WMncc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "799689984567-gfv4klku32d49qs4evfvpb79ggmng89t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

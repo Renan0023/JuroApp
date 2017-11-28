@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="juroapp.com.br.juroapp">
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -21,7 +22,7 @@
             android:name=".Activity.actv.ActivityPrincipal"
             android:label="@string/title_activity_principal" />
         <activity android:name=".Activity.actv.ActivityBebidas" />
-        <activity android:name=".Activity.actv.ActivityPadraoProdutos"></activity>
+        <activity android:name=".Activity.actv.ActivityOrganicos"></activity>
     </application>
 
 </manifest>

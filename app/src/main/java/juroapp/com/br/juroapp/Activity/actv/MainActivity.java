@@ -2,8 +2,10 @@ package juroapp.com.br.juroapp.Activity.actv;
 
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -11,6 +13,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+
+import juroapp.com.br.juroapp.Activity.dao.ConfiguracaoFirebase;
+import juroapp.com.br.juroapp.Activity.entidades.Usuarios;
 import juroapp.com.br.juroapp.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -18,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
     private EditText senha;
     private Button entrar;
     private TextView novoUsuario;
+    private FirebaseAuth autenticacao;
+    private Usuarios usuarios;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +43,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (!login.getText().equals("") && !senha.getText().equals("")) {
+                    usuarios = new Usuarios();
+//                    usuarios.setEmail(login.getText().toString());
+//                    usuarios.setSenha(senha.getText().toString());
+                    usuarios.setEmail("renan@gmail.com");
+                    usuarios.setSenha("123456");
+                    validarligin();
+
+
                     //TODO AQUI TRATAR COM O SERVIÇO ANTES DE ABRIR A TELA PRINCIPAL
-                    Intent abrirTelaPrincipal = new Intent(MainActivity.this, ActivityPrincipal.class);
-                    startActivity(abrirTelaPrincipal);
+
                 }
             }
         });
@@ -52,6 +70,28 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void validarligin() {
+
+        autenticacao = ConfiguracaoFirebase.getAutenticacao();
+
+        autenticacao.signInWithEmailAndPassword(usuarios.getEmail(), usuarios.getSenha()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    Log.d("", "");
+
+                    Intent abrirTelaPrincipal = new Intent(MainActivity.this, ActivityPrincipal.class);
+                    startActivity(abrirTelaPrincipal);
+
+                    Toast.makeText(MainActivity.this, "AUTENTICOU FIREBASE", Toast.LENGTH_LONG).show();
+
+                } else {
+                    Log.d("", "");
+                }
+            }
+        });
     }
 
     private View showCadastrar() {
