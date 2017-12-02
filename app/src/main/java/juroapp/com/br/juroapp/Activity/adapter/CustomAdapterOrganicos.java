@@ -2,15 +2,18 @@ package juroapp.com.br.juroapp.Activity.adapter;
 
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 import juroapp.com.br.juroapp.Activity.VO.ItemListaOrganicosVO;
 import juroapp.com.br.juroapp.Activity.actv.ActivityOrganicos;
 
+import juroapp.com.br.juroapp.Activity.actv.MainActivity;
 import juroapp.com.br.juroapp.Activity.componentes.ViewHolderEmptyState;
 import juroapp.com.br.juroapp.Activity.componentes.ViewHolderItemMenu;
 import juroapp.com.br.juroapp.Activity.componentes.ViewHolderItemProduto;
@@ -83,7 +86,7 @@ public class CustomAdapterOrganicos extends RecyclerView.Adapter<RecyclerView.Vi
                 ViewHolderEmptyState viewHolderEmptyState = new ViewHolderEmptyState(LayoutInflater.from(parent.getContext()).inflate(R.layout.card_empty_state, parent, false));
                 return viewHolderEmptyState;
             case VIEW_TYPE_OBJECT:
-                ViewHolderItemProduto viewHolderItemProduto= new ViewHolderItemProduto(LayoutInflater.from(parent.getContext()).inflate(R.layout.cell_item_produto, parent, false));
+                ViewHolderItemProduto viewHolderItemProduto = new ViewHolderItemProduto(LayoutInflater.from(parent.getContext()).inflate(R.layout.cell_item_produto, parent, false));
                 return viewHolderItemProduto;
         }
 
@@ -107,17 +110,15 @@ public class CustomAdapterOrganicos extends RecyclerView.Adapter<RecyclerView.Vi
             case VIEW_TYPE_OBJECT:
 
 
-                ViewHolderItemMenu viewHolderItemMenu = (ViewHolderItemMenu) holder;
+                ViewHolderItemProduto viewHolderItemProduto = (ViewHolderItemProduto) holder;
                 final ItemListaOrganicosVO item = mDataset.get(position);
 
-                viewHolderItemMenu.mTextViewTitulo.setText(item.getNomeProduto());
-                viewHolderItemMenu.mCardView.setOnClickListener(new View.OnClickListener() {
+                viewHolderItemProduto.mNome.setText(item.getNomeProduto());
+                viewHolderItemProduto.mPreco.setText(item.getPrecoProduto());
+                viewHolderItemProduto.mCardView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-
-
-                        escolherTela(position);
-
+                        Toast.makeText(mActivity, mDataset.get(position).getNomeProduto(), Toast.LENGTH_LONG).show();
                     }
                 });
                 break;

@@ -14,7 +14,16 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Map;
 
 import juroapp.com.br.juroapp.Activity.VO.ItemListaOrganicosVO;
 import juroapp.com.br.juroapp.Activity.adapter.CustomAdapterListaMenu;
@@ -30,6 +39,7 @@ public class ActivityOrganicos extends AppCompatActivity {
     public static final String BROAD_CAST_LISTA_ORGANICOS = "com.lista.Organicos";
     private RecyclerView.LayoutManager mLayoutManager;
     ArrayList<ItemListaOrganicosVO> listaOrganicos = new ArrayList<>();
+    private DatabaseReference root;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,22 +78,77 @@ public class ActivityOrganicos extends AppCompatActivity {
 
         listaFirebase();
 
-        botaoProduto.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.d("", "");
-            }
-        });
+//        botaoProduto.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Log.d("", "");
+//            }
+//        });
 
 
     }
 
+
     private void listaFirebase() {
 
-        //LISTAFIREBASE
+
+        root = FirebaseDatabase.getInstance().getReference().child("/Produtos/");
+
+        root.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                append_chat_conversation(dataSnapshot);
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+                append_chat_conversation(dataSnapshot);
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+                append_chat_conversation(dataSnapshot);
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+                append_chat_conversation(dataSnapshot);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.d("", "");
+            }
+        });
+//        //LISTAFIREBASE
 
         Intent intent = new Intent(BROAD_CAST_LISTA_ORGANICOS);
         getApplicationContext().sendBroadcast(intent);
+    }
+
+
+    private void append_chat_conversation(DataSnapshot dataSnapshot) {
+        Iterator i = dataSnapshot.getChildren().iterator();
+
+        while (i.hasNext()) {
+
+            ItemListaOrganicosVO mItemListaOrganicosVO = new ItemListaOrganicosVO();
+            try {
+                mItemListaOrganicosVO.setNomeProduto((String) ((DataSnapshot) i.next()).getKey());
+                mItemListaOrganicosVO.setPrecoProduto((String) ((DataSnapshot) i.next()).getValue().toString());
+                listaOrganicos.add(mItemListaOrganicosVO);
+
+            } catch (Exception e) {
+
+
+                Log.e("erro ActvChatRom", e.getMessage());
+
+            }
+
+
+        }
+        Log.d("", "");
+
     }
 
 
