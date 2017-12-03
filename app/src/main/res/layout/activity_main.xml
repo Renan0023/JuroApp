@@ -32,13 +32,6 @@
             android:layout_height="wrap_content"
             android:text="@string/entrar" />
 
-        <TextView
-            android:id="@+id/criarConta"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingTop="5dp"
-            android:text="@string/CriarConta"
-            android:textSize="16dp" />
 
 
     </LinearLayout>

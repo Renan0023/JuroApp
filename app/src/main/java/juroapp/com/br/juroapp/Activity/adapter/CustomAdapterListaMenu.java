@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 
 import juroapp.com.br.juroapp.Activity.VO.ItemListaMenuVO;
+import juroapp.com.br.juroapp.Activity.actv.ActivityCadastrarUsuario;
 import juroapp.com.br.juroapp.Activity.actv.ActivityOrganicos;
 import juroapp.com.br.juroapp.Activity.actv.ActivityPrincipal;
 import juroapp.com.br.juroapp.Activity.componentes.ViewHolderEmptyState;
@@ -131,8 +132,8 @@ public class CustomAdapterListaMenu extends RecyclerView.Adapter<RecyclerView.Vi
                 mActivity.startActivity(abrirTelaPrincipal);
                 break;
             case 1:
-//                Intent abrirTelaPrincipal = new Intent(mActivity, ActivityOrganicos.class);
-//                mActivity.startActivity(abrirTelaPrincipal);
+                Intent CadastrarUsuario = new Intent(mActivity, ActivityCadastrarUsuario.class);
+                mActivity.startActivity(CadastrarUsuario);
                 break;
 
         }

@@ -40,6 +40,7 @@ public class ActivityOrganicos extends AppCompatActivity {
     private RecyclerView.LayoutManager mLayoutManager;
     ArrayList<ItemListaOrganicosVO> listaOrganicos = new ArrayList<>();
     private DatabaseReference root;
+    private Button atualizarLista;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +57,14 @@ public class ActivityOrganicos extends AppCompatActivity {
 
         mRecyclerView.setLayoutManager(mLayoutManager);
         IntentFilter intentFilter = new IntentFilter(BROAD_CAST_LISTA_ORGANICOS);
+        atualizarLista = (Button) findViewById(R.id.atualizarLista);
+        atualizarLista.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                listaFirebase();
+            }
+        });
+
 
         mReceiver = new BroadcastReceiver() {
 
@@ -77,13 +86,6 @@ public class ActivityOrganicos extends AppCompatActivity {
         registerReceiver(mReceiver, intentFilter);
 
         listaFirebase();
-
-//        botaoProduto.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Log.d("", "");
-//            }
-//        });
 
 
     }

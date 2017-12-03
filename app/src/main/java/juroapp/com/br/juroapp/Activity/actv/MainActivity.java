@@ -1,16 +1,13 @@
 package juroapp.com.br.juroapp.Activity.actv;
 
-import android.app.AlertDialog;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -26,7 +23,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import juroapp.com.br.juroapp.Activity.VO.ItemListaOrganicosVO;
 import juroapp.com.br.juroapp.Activity.VO.ItemListaUsuariosFireBase;
 import juroapp.com.br.juroapp.Activity.dao.ConfiguracaoFirebase;
 import juroapp.com.br.juroapp.Activity.entidades.Usuarios;
@@ -38,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText login;
     private EditText senha;
     private Button entrar;
-    private TextView novoUsuario;
+    //    private TextView novoUsuario;
     private FirebaseAuth autenticacao;
     private Usuarios usuarios;
     private DatabaseReference root;
@@ -51,49 +47,51 @@ public class MainActivity extends AppCompatActivity {
         login = (EditText) findViewById(R.id.login);
         senha = (EditText) findViewById(R.id.senha);
         entrar = (Button) findViewById(R.id.btnEntrar);
-        novoUsuario = (TextView) findViewById(R.id.criarConta);
+//        novoUsuario = (TextView) findViewById(R.id.criarConta);
         validarligin();
 
 
         entrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Boolean chave = false;
                 if (!login.getText().equals("") && !senha.getText().equals("")) {
                     usuarios = new Usuarios();
                     usuarios.setEmail(login.getText().toString());
                     usuarios.setSenha(senha.getText().toString());
-//                    usuarios.setEmail("renan@gmail.com");
-//                    usuarios.setSenha("123456");
 
                     for (int i = 0; i < listaUsuarios.size(); i++) {
                         if (usuarios.getEmail().equals(listaUsuarios.get(i).getLogin())) {
-                            Intent abrirTelaPrincipal = new Intent(MainActivity.this, ActivityPrincipal.class);
-                            startActivity(abrirTelaPrincipal);
+                            if (usuarios.getSenha().equals(listaUsuarios.get(i).getSenha())) {
+                                i = 9999;
+                                chave = true;
+
+                            } else {
+                                chave = false;
+                            }
                         } else {
-                            Log.d("", "");
+                            chave = false;
+
+
                         }
                     }
-
-
-                    //TODO AQUI TRATAR COM O SERVIÇO ANTES DE ABRIR A TELA PRINCIPAL
+                    if (chave) {
+                        Intent abrirTelaPrincipal = new Intent(MainActivity.this, ActivityPrincipal.class);
+                        startActivity(abrirTelaPrincipal);
+                    } else {
+                        msgErro();
+                    }
 
                 }
             }
         });
 
-        novoUsuario.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                AlertDialog.Builder alert = new AlertDialog.Builder(view.getContext());
+//
 
-                alert.setView(showCadastrar());
+    }
 
-                AlertDialog dialog = alert.create();
-
-                dialog.show();
-            }
-        });
-
+    private void msgErro() {
+        Toast.makeText(MainActivity.this, "Login ou senha inválidos", Toast.LENGTH_LONG).show();
     }
 
     private void verificarUsuariosFirebase() {
@@ -171,7 +169,6 @@ public class MainActivity extends AppCompatActivity {
                     Log.d("", "");
 
 
-
                     Toast.makeText(MainActivity.this, "AUTENTICOU FIREBASE", Toast.LENGTH_LONG).show();
                     verificarUsuariosFirebase();
                 } else {
@@ -181,50 +178,4 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private View showCadastrar() {
-
-        final LayoutInflater inflater = getLayoutInflater();
-        View alertLayout = inflater.inflate(R.layout.alert_novo_usuario, null);
-        final EditText nomeNovo = (EditText) alertLayout.findViewById(R.id.nomeNovoUsuario);
-        final EditText sobreNomeNovo = (EditText) alertLayout.findViewById(R.id.sobreNomeNovoUsuario);
-        final EditText emailNovo = (EditText) alertLayout.findViewById(R.id.emailNovoUsuario);
-        final EditText profissaoNovo = (EditText) alertLayout.findViewById(R.id.profissaoNovoUsuario);
-        final EditText senha1Novo = (EditText) alertLayout.findViewById(R.id.senha1NovoUsuario);
-        final EditText senha2Novo = (EditText) alertLayout.findViewById(R.id.senha2NovoUsuario);
-        Button enviarCadastro = (Button) alertLayout.findViewById(R.id.cadastrarNovoUsuario);
-
-
-        enviarCadastro.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String nome = String.valueOf(nomeNovo.getText());
-                String sobreNome = String.valueOf(sobreNomeNovo.getText());
-                String email = String.valueOf(emailNovo.getText());
-                String profissao = String.valueOf(profissaoNovo.getText());
-                String senha1 = String.valueOf(senha1Novo.getText());
-                String senha2 = String.valueOf(senha2Novo.getText());
-
-                if (!nome.equals("") &&
-                        !sobreNome.equals("") &&
-                        !email.equals("") &&
-                        !profissao.equals("") &&
-                        !senha1.equals("") &&
-                        !senha2.equals("")) {
-                    if (senha1.equals(senha2)) {
-
-                        //TODO AQUI ENVIA PRO SERVIDOR
-                    } else {
-                        Toast.makeText(inflater.getContext(), R.string.senhaInvalida, Toast.LENGTH_SHORT).show();
-                    }
-                } else {
-                    Toast.makeText(inflater.getContext(), R.string.todosOsCamposPreenchidos, Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-
-        //teste//
-
-        return alertLayout;
-
-    }
 }

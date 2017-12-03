@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">JuroApp</string>
     <string name="CriarConta">Criar uma conta</string>
-    <string name="login">Longin</string>
+    <string name="login">Login</string>
     <string name="senha">Senha</string>
     <string name="entrar">Entrar</string>
-
+    <string name="atualizar">Atualizar</string>
 
     <!--ALert Novo Usuario-->
     <string name="infoAlert">Informe seus  dados para cadastro :</string>
@@ -21,7 +21,7 @@
     <!--Menu Principal-->
     <string name="escolharCategoria">Escolha a Categoria que deseja trabalhar</string>
 
-<string name="enviar">Enviar</string>
+    <string name="enviar">Enviar</string>
     <!--Menu Bedidas-->
     <!--Bebidas-->
     <string name="bebidas">Bebidas</string>
@@ -63,15 +63,11 @@
     <string name="brinquedos">Brinquedos</string>
     <string name="empty_state_text_title">Sem dados para exibir</string>
     <string-array name="listaNomes">
-        <item>organicos</item>
-        <item>naoOrganicos</item>
-        <item>eletronicos</item>
-        <item>eletroDomesticos</item>
-        <item>carnes</item>
-        <item>padaria</item>
-        <item>graos</item>
-        <item>temperos</item>
+        <item>Lista de Produtos</item>
+        <item>Usuários</item>
     </string-array>
 
+    <string name="novousuario">Cadastrar Novo Usuário</string>
+    <string name="listarUsuarios">Listar Usuários</string>
 
 </resources>

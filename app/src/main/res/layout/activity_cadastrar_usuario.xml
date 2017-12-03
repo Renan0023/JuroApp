@@ -4,26 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="juroapp.com.br.juroapp.Activity.actv.ActivityOrganicos">
+    tools:context="juroapp.com.br.juroapp.Activity.actv.ActivityCadastrarUsuario">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/atualizarLista"
+            android:id="@+id/cadastrarUsuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/atualizar" />
+            android:text="@string/novousuario" />
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/listaMenu"
+        <Button
+            android:id="@+id/listarUsuarios"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-        </android.support.v7.widget.RecyclerView>
-
+            android:layout_height="wrap_content"
+            android:text="@string/listarUsuarios" />
 
     </LinearLayout>
 </LinearLayout>

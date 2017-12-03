@@ -10,11 +10,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="@color/back_cinza"
         android:layout_marginBottom="4dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
+        android:background="@color/back_cinza"
         card_view:cardBackgroundColor="?android:colorBackground"
         card_view:cardCornerRadius="2dp"
         card_view:cardElevation="2dp">
@@ -38,6 +38,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="4dp" />
+
 
         </LinearLayout>
 
